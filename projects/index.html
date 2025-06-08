@@ -6,24 +6,20 @@
     <title>Atlasx - Projects</title>
     <meta name="theme-color" content="#992DFF">
     
+    <!-- IMPORTANT: There is NO <base> tag anywhere in this head section -->
+
     <!-- Link to Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap">
     
-    <!-- 
-      === THIS IS THE FIX ===
-      The path MUST be "projects.css" (relative to the current folder).
-      It CANNOT be "/projects.css" (which would start from the website's root).
-    -->
+    <!-- This link tells the page to find the CSS file in the SAME folder. -->
     <link rel="stylesheet" href="projects.css">
 </head>
 <body>
 
     <header>
         <nav>
-            <!-- This link correctly goes UP one folder to your homepage -->
+            <!-- This link goes UP one folder to the main homepage -->
             <a href="../index.html">Home</a> 
-            
-            <!-- This link points to the current page -->
             <a href="index.html" class="active-link">Projects</a>
         </nav>
     </header>
