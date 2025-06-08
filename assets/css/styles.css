@@ -18,6 +18,22 @@
   transform: translate(-50%, -50%);
 }
 
+.social-links {
+    text-align: center; /* Centers the icons */
+    margin-top: 25px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 28px;
+    margin: 0 15px; /* Adds space between icons */
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.social-links a:hover {
+    color: #992DFF; /* Your theme color on hover */
+}
+
 .navbar {
   z-index: 5;
   visibility: hidden;
