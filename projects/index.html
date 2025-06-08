@@ -9,17 +9,21 @@
     <!-- Link to Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap">
     
-    <!-- This link is CORRECT because projects.css is in the same folder -->
+    <!-- 
+      === THIS IS THE FIX ===
+      The path MUST be "projects.css" (relative to the current folder).
+      It CANNOT be "/projects.css" (which would start from the website's root).
+    -->
     <link rel="stylesheet" href="projects.css">
 </head>
 <body>
 
     <header>
         <nav>
-            <!-- === THIS IS THE FIX === -->
-            <!-- We added ../ to go UP one folder to find the main index.html -->
+            <!-- This link correctly goes UP one folder to your homepage -->
             <a href="../index.html">Home</a> 
             
+            <!-- This link points to the current page -->
             <a href="index.html" class="active-link">Projects</a>
         </nav>
     </header>
