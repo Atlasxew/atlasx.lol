@@ -12,13 +12,31 @@
         <link rel="icon" type="image/jpeg" sizes="256x256" href="assets/img/animes/anime1.jpg">
         <link rel="icon" type="image/jpeg" sizes="256x256" href="assets/img/animes/anime1.jpg">
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace&amp;display=swap">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab&amp;display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap">
         <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
         <link rel="stylesheet" href="assets/css/styles.css">
         <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- Style for the new button -->
+        <style>
+            #changeBackgroundBtn {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 10px 15px;
+                background-color: #992DFF; /* Matches your theme color */
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                z-index: 1000; /* Ensures it's on top of everything */
+                font-family: 'Roboto Slab', sans-serif;
+                display: none; /* Hide it until user enters */
+            }
+        </style>
 
     </head>
     <body class="bmain">
@@ -38,9 +56,14 @@
                 <a class="next">
                     > Enter World <</a></i>
         </div>
+
+        <!-- This is the button to change the background -->
+        <button id="changeBackgroundBtn">Change Background</button>
+
         <div class="background">
             <div id="pattern"></div>
             <video id="background" loop="" playsinline>
+                <!-- The source tag will be updated by the new script -->
                 <source src="https://cdn.discordapp.com/attachments/1361821242096877790/1381290963380732075/6wU73aE.mp4?ex=6846faf4&is=6845a974&hm=b44d28547427ec7de6653c2aa234c02ece8a7589498f91ceddee6e3efd853872&" type="video/mp4">
                 <script>
                     var video = document.getElementById("background");
@@ -51,7 +74,6 @@
             </video>
         </div>
         <div>
-
             <section class="main">
                 <div class="text-start containers">
                     <div class="Brand">
@@ -61,7 +83,7 @@
                         </p>
                     </div>
                     <img class="d-xl-flex main_image1" id="main_image1" src="">
-                    <iframe height="250px" width="410px" scrolling="no" src="https://lanyard.cnrad.dev/api/293096218677215234?borderRadius=5px&idleMessage=sleeping%20zzz&amp;bg=a&amp;animated=true" frameborder="0"></iframe>
+                    <iframe height="250px" width="410px" scrolling="no" src="https://lanyard.cnrad.dev/api/293096218677215234?borderRadius=5px&idleMessage=sleeping%20zzz&bg=a&animated=true" frameborder="0"></iframe>
                 </div>
             </section>
         </div>
@@ -72,5 +94,41 @@
         <script src="assets/js/ok.js"></script>
         <script src="assets/js/random_image.js"></script>
         <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"94c986272b30ef3d","version":"2025.5.0","r":1,"token":"eaac0412d0bb4b0085abd0c56bd86cd0","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
+    
+        <!-- NEW SCRIPT for changing background -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // List of all your background videos
+                const videoSources = [
+                    "https://cdn.discordapp.com/attachments/1361821242096877790/1381290963380732075/6wU73aE.mp4?ex=6846faf4&is=6845a974&hm=b44d28547427ec7de6653c2aa234c02ece8a7589498f91ceddee6e3efd853872&", // Your original video
+                    "https://cdn.discordapp.com/attachments/1378044378106560522/1381385964374720583/cJZEMTA.mp4?ex=6847536e&is=684601ee&hm=e27361cdffb793bac6f613561ced3a4c1aafaf5782883332c11e2080c212120d&"   // The new purple-pink video
+                ];
+
+                let currentVideoIndex = 0;
+
+                const changeBtn = document.getElementById('changeBackgroundBtn');
+                const videoElement = document.getElementById('background');
+                const videoSourceTag = videoElement.querySelector('source');
+                const enterButton = document.querySelector('.startthing .next');
+
+                // When user clicks "Enter World", show the change background button
+                enterButton.addEventListener('click', function() {
+                    changeBtn.style.display = 'block';
+                });
+
+                // When the change background button is clicked
+                changeBtn.addEventListener('click', function() {
+                    // Go to the next video in the list
+                    currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+                    
+                    // Change the video source
+                    videoSourceTag.setAttribute('src', videoSources[currentVideoIndex]);
+                    
+                    // Load and play the new video
+                    videoElement.load();
+                    videoElement.play();
+                });
+            });
+        </script>
     </body>
 </html>
