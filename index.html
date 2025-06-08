@@ -14,11 +14,7 @@
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace&display=swap">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap">
-        
-        <!-- === THIS IS THE FIX === -->
-        <!-- The old local Font Awesome link is removed and replaced with this online one -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        
         <link rel="stylesheet" href="assets/css/styles.css">
         <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -37,33 +33,42 @@
                 cursor: pointer;
                 z-index: 1000;
                 font-family: 'Roboto Slab', sans-serif;
-                display: none; /* Hide it until user enters */
-                
-                /* GRADIENT STYLES FOR THE BUTTON */
-                background: linear-gradient(to right, #580c88, #E442F8); /* Dark purple to bright pink */
+                display: none;
+                background: linear-gradient(to right, #580c88, #E442F8);
                 background-size: 200% auto;
                 transition: background-position 0.5s ease;
             }
 
             #changeBackgroundBtn:hover {
-                background-position: right center; /* Slides the gradient on hover */
+                background-position: right center;
             }
 
-            /* SOCIAL LINK STYLES */
             .social-links {
-                text-align: center; /* Centers the icons */
+                text-align: center;
                 margin-top: 25px;
             }
 
             .social-links a {
                 color: white;
                 font-size: 28px;
-                margin: 0 15px; /* Adds space between icons */
-                transition: color 0.3s ease; /* Smooth color change on hover */
+                margin: 0 15px;
+                transition: color 0.3s ease;
             }
 
             .social-links a:hover {
-                color: #992DFF; /* Your theme color on hover */
+                color: #992DFF;
+            }
+
+            /* === STYLES FOR THE CUSTOM B ICON === */
+            .social-icon-img {
+                height: 28px; /* Matches the size of the other icons */
+                vertical-align: middle; /* Aligns it better with the font icons */
+                transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+            }
+
+            /* Adds a nice pop effect on hover */
+            .social-links a:hover .social-icon-img {
+                transform: scale(1.15);
             }
         </style>
 
@@ -77,27 +82,20 @@
                 this.musicFadeIn = 4000;
                 this.Texts = ["hello werld", "no i am not a femboy", "vevi silly guy", "'maybe discord developer'", "viod u reading this?", "join boostility"];
             };
-
             var app = new _app();
         </script>
         <div class="startthing">
-            <i>
-                <a class="next">
-                    > Enter World <</a></i>
+            <i><a class="next">> Enter World <</a></i>
         </div>
 
-        <!-- This is the button to change the background -->
         <button id="changeBackgroundBtn">Change Background</button>
-
 
         <div class="background">
             <div id="pattern"></div>
             <video id="background" loop="" playsinline>
-                <!-- The source tag will be updated by the new script -->
                 <source src="https://cdn.discordapp.com/attachments/1361821242096877790/1381290963380732075/6wU73aE.mp4?ex=6846faf4&is=6845a974&hm=b44d28547427ec7de6653c2aa234c02ece8a7589498f91ceddee6e3efd853872&" type="video/mp4">
                 <script>
                     var video = document.getElementById("background");
-
                     app.videoElement = video;
                     app.videoElement.volume = 0;
                 </script>
@@ -108,9 +106,7 @@
                 <div class="text-start containers">
                     <div class="Brand">
                         <h1 class="Paragraph Hello">Hello World!</h1>
-                        <p class="a">
-                            <span id="Bruh" class="Paragraph"></span>
-                        </p>
+                        <p class="a"><span id="Bruh" class="Paragraph"></span></p>
                     </div>
                     <img class="d-xl-flex main_image1" id="main_image1" src="">
                     <iframe height="250px" width="410px" scrolling="no" src="https://lanyard.cnrad.dev/api/293096218677215234?borderRadius=5px&idleMessage=sleeping%20zzz&bg=a&animated=true" frameborder="0"></iframe>
@@ -121,6 +117,11 @@
                         <a href="https://discord.com/users/293096218677215234" target="_blank"><i class="fab fa-discord"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        
+                        <!-- === NEW 'B' BUTTON === -->
+                        <a href="https://boostility.org" target="_blank" title="Boostility">
+                            <img src="https://cdn.discordapp.com/attachments/1378044378106560522/1381392007544570028/LTPGUJQ.png?ex=6847590f&is=6846078f&hm=b48068447aa42662dc76aceefaae37b86edd187b11fc4194566013cdfd50cfd9&" alt="Boostility" class="social-icon-img">
+                        </a>
                     </div>
                     <!-- END: SOCIAL LINKS -->
 
@@ -138,33 +139,21 @@
         <!-- SCRIPT for changing background -->
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                // List of all your background videos
                 const videoSources = [
-                    "https://cdn.discordapp.com/attachments/1361821242096877790/1381290963380732075/6wU73aE.mp4?ex=6846faf4&is=6845a974&hm=b44d28547427ec7de6653c2aa234c02ece8a7589498f91ceddee6e3efd853872&", // Your original video
-                    "https://cdn.discordapp.com/attachments/1378044378106560522/1381385964374720583/cJZEMTA.mp4?ex=6847536e&is=684601ee&hm=e27361cdffb793bac6f613561ced3a4c1aafaf5782883332c11e2080c212120d&"   // The new purple-pink video
+                    "https://cdn.discordapp.com/attachments/1361821242096877790/1381290963380732075/6wU73aE.mp4?ex=6846faf4&is=6845a974&hm=b44d28547427ec7de6653c2aa234c02ece8a7589498f91ceddee6e3efd853872&",
+                    "https://cdn.discordapp.com/attachments/1378044378106560522/1381385964374720583/cJZEMTA.mp4?ex=6847536e&is=684601ee&hm=e27361cdffb793bac6f613561ced3a4c1aafaf5782883332c11e2080c212120d&"
                 ];
-
                 let currentVideoIndex = 0;
-
                 const changeBtn = document.getElementById('changeBackgroundBtn');
                 const videoElement = document.getElementById('background');
                 const videoSourceTag = videoElement.querySelector('source');
                 const enterButton = document.querySelector('.startthing .next');
-
-                // When user clicks "Enter World", show the change background button
                 enterButton.addEventListener('click', function() {
                     changeBtn.style.display = 'block';
                 });
-
-                // When the change background button is clicked
                 changeBtn.addEventListener('click', function() {
-                    // Go to the next video in the list
                     currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
-                    
-                    // Change the video source
                     videoSourceTag.setAttribute('src', videoSources[currentVideoIndex]);
-                    
-                    // Load and play the new video
                     videoElement.load();
                     videoElement.play();
                 });
