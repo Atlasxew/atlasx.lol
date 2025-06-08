@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atlasx - Projects</title>
     <meta name="theme-color" content="#992DFF">
-    
-    <!-- IMPORTANT: There is NO <base> tag anywhere in this head section -->
 
     <!-- Link to Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap">
     
-    <!-- This link tells the page to find the CSS file in the SAME folder. -->
-    <link rel="stylesheet" href="projects.css">
+    <!-- 
+      === THE ABSOLUTE PATH FIX ===
+      This path starts from the root of the website, which is guaranteed to work.
+    -->
+    <link rel="stylesheet" href="/projects/projects.css">
 </head>
 <body>
 
     <header>
         <nav>
-            <!-- This link goes UP one folder to the main homepage -->
+            <!-- This link correctly goes UP to the homepage -->
             <a href="../index.html">Home</a> 
-            <a href="index.html" class="active-link">Projects</a>
+            <a href="/projects/" class="active-link">Projects</a>
         </nav>
     </header>
 
