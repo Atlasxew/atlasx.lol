@@ -20,21 +20,46 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
-        <!-- Style for the new button -->
+        <!-- Styles for new features -->
         <style>
             #changeBackgroundBtn {
                 position: fixed;
                 top: 20px;
                 right: 20px;
                 padding: 10px 15px;
-                background-color: #992DFF; /* Matches your theme color */
                 color: white;
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
-                z-index: 1000; /* Ensures it's on top of everything */
+                z-index: 1000;
                 font-family: 'Roboto Slab', sans-serif;
                 display: none; /* Hide it until user enters */
+                
+                /* NEW GRADIENT STYLES */
+                background: linear-gradient(to right, #580c88, #E442F8); /* Dark purple to bright pink */
+                background-size: 200% auto;
+                transition: background-position 0.5s ease;
+            }
+
+            #changeBackgroundBtn:hover {
+                background-position: right center; /* Slides the gradient on hover */
+            }
+
+            /* NEW SOCIAL LINK STYLES */
+            .social-links {
+                text-align: center; /* Centers the icons */
+                margin-top: 25px;
+            }
+
+            .social-links a {
+                color: white;
+                font-size: 28px;
+                margin: 0 15px; /* Adds space between icons */
+                transition: color 0.3s ease; /* Smooth color change on hover */
+            }
+
+            .social-links a:hover {
+                color: #992DFF; /* Your theme color on hover */
             }
         </style>
 
@@ -85,6 +110,16 @@
                     </div>
                     <img class="d-xl-flex main_image1" id="main_image1" src="">
                     <iframe height="250px" width="410px" scrolling="no" src="https://lanyard.cnrad.dev/api/293096218677215234?borderRadius=5px&idleMessage=sleeping%20zzz&bg=a&animated=true" frameborder="0"></iframe>
+                    
+                    <!-- START: SOCIAL LINKS -->
+                    <div class="social-links">
+                        <!-- IMPORTANT: Replace '#' with your actual profile links! -->
+                        <a href="https://discord.com/users/293096218677215234" target="_blank"><i class="fab fa-discord"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <!-- END: SOCIAL LINKS -->
+
                 </div>
             </section>
         </div>
