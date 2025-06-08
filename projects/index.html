@@ -6,19 +6,21 @@
     <title>Atlasx - Projects</title>
     <meta name="theme-color" content="#992DFF">
     
-    <!-- Link to Google Fonts for consistency -->
+    <!-- Link to Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap">
     
-    <!-- Link to your new CSS file -->
+    <!-- This link is CORRECT because projects.css is in the same folder -->
     <link rel="stylesheet" href="projects.css">
 </head>
 <body>
 
     <header>
         <nav>
-            <!-- Link back to your main page -->
-            <a href="index.html">Home</a> 
-            <a href="projects.html" class="active-link">Projects</a>
+            <!-- === THIS IS THE FIX === -->
+            <!-- We added ../ to go UP one folder to find the main index.html -->
+            <a href="../index.html">Home</a> 
+            
+            <a href="index.html" class="active-link">Projects</a>
         </nav>
     </header>
 
@@ -41,7 +43,6 @@
             <div class="abandoned-overlay">
                 <span>X</span>
             </div>
-             <!-- You can add a placeholder image or text here if you want -->
              <div class="card-content-abandoned">
                 <p>Project has been abandoned.</p>
              </div>
