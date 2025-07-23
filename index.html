@@ -85,15 +85,15 @@
             var app = new _app();
         </script>
         <div class="startthing">
-            <i><a class="next">> Enter World <</a></i>
+            <i><a class="next">> Hey! <</a></i>
         </div>
 
-        <button id="changeBackgroundBtn">Change Background</button>
+        <button id="changeBackgroundBtn">CLICK ME</button>
 
         <div class="background">
             <div id="pattern"></div>
             <video id="background" loop="" playsinline>
-                <source src="https://d1xviafewcoylr.cloudfront.net/m2sy5y%2Ffile%2F7c44de0446a74af974d6b68ff6659d83_46c5a6a27d5dd2d91ea5007583a7fe78.mp4?response-content-disposition=inline%3Bfilename%3D"7c44de0446a74af974d6b68ff6659d83_46c5a6a27d5dd2d91ea5007583a7fe78.mp4"%3B&response-content-type=video%2Fmp4&Expires=1751775658&Signature=U1-4QjZ-9eKSLgUEWV5P6d69V-QFZWRFYm1giBBl5a97rGhDRoooLOozsxij-fktZH7VjwN5t8bApLFvMAR3aVPseTiTHGKUa7cKCBxJTtdp9JR8MFQliEUyN8SDdGjrGKzKz5TCGe3S26xOJMXdWROFmjIhk4gmqxepqzWJHSJr8PJyGJwxppOm-Ym-NQ5RAviAhLe3xh4IfK0nn8kaJY2zXeRqiWK3ODqS-j3NLqKRUwhNm8AUMulRcNNtCUPpf2fUY-ednKFSvaSiYH6HHt0giaVRwPnkkwj8D1TkiPP3FkkHyUDGap2H4mwwUcX1y7-OUmoQVul7tnR9BMD6BA__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ" type="video/mp4">
+                <source src="assets/audio/music.mp4" type="video/mp4">
                 <script>
                     var video = document.getElementById("background");
                     app.videoElement = video;
@@ -109,18 +109,18 @@
                         <p class="a"><span id="Bruh" class="Paragraph"></span></p>
                     </div>
                     <img class="d-xl-flex main_image1" id="main_image1" src="">
-                    <iframe height="250px" width="410px" scrolling="no" src="https://lanyard.cnrad.dev/api/293096218677215234?borderRadius=5px&idleMessage=sleeping%20zzz&bg=a&animated=true" frameborder="0"></iframe>
+                    <iframe height="250px" width="410px" scrolling="no" src="https://lanyard.cnrad.dev/api/1381605457252192339?borderRadius=5px&idleMessage=sleeping%20zzz&bg=a&animated=true" frameborder="0"></iframe>
                     
                     <!-- START: SOCIAL LINKS -->
                     <div class="social-links">
                         <!-- IMPORTANT: Replace '#' with your actual profile links! -->
-                        <a href="https://discord.com/users/293096218677215234" target="_blank"><i class="fab fa-discord"></i></a>
+                        <a href="https://discord.com/users/1381605457252192339" target="_blank"><i class="fab fa-discord"></i></a>
                         <a href="https://github.com/Atlasxew" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://www.reddit.com/user/the_atlas1_/" target="_blank"><i class="fab fa-reddit"></i></a>
                         
                         <!-- === NEW 'B' BUTTON === -->
                         <a href="https://boostility.org" target="_blank" title="Boostility">
-                            <img src="https://cdn.discordapp.com/attachments/1378044378106560522/1381392007544570028/LTPGUJQ.png?ex=6847590f&is=6846078f&hm=b48068447aa42662dc76aceefaae37b86edd187b11fc4194566013cdfd50cfd9&" alt="Boostility" class="social-icon-img">
+                            <img src="assets/img/boostility.png" alt="Boostility" class="social-icon-img">
                         </a>
                     </div>
                     <!-- END: SOCIAL LINKS -->
@@ -140,8 +140,8 @@
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const videoSources = [
-                    "",
-                    "https://www.youtube.com/watch?v=ekW-i0KlU1U"
+                    "assets/audio/music2.mp4",
+                    "assets/audio/music3.mp4"
                 ];
                 let currentVideoIndex = 0;
                 const changeBtn = document.getElementById('changeBackgroundBtn');
